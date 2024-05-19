@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #ffffff; /* White background to make the red stand out */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            text-align: center;
+        }
+        .logo {
+            margin-bottom: 20px;
+        }
+        .text-container {
+            max-width: 600px;
+        }
+        .text {
+            font-size: 1.5em;
+            color: #e60000; /* Red color to match your logo */
+            opacity: 0;
+            animation: fadeIn 3s forwards;
+        }
+        .text:nth-child(2) {
+            animation-delay: 3s;
+        }
+        .text:nth-child(3) {
+            animation-delay: 6s;
+        }
+        .text:nth-child(4) {
+            animation-delay: 9s;
+        }
+        .text:nth-child(5) {
+            animation-delay: 12s;
+        }
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+            }
+        }
+    </style>
+    <title>Sendme Landing Page</title>
+</head>
+<body>
+    <img src="your-logo-url-here" alt="Sendme Logo" class="logo">
+    <div class="text-container">
+        <div class="text">Sendme, we are sent to bring you quality meat to your doorstep,</div>
+        <div class="text">but we realised the process of getting the meat is not efficient.</div>
+        <div class="text">We are now focused on improving that process</div>
+        <div class="text">so that you can always get quality meat</div>
+        <div class="text">and MORE anywhere.</div>
+    </div>
+</body>
+</html>
