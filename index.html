@@ -57,6 +57,18 @@
         .dear-visitor {
             margin-bottom: 40px;
         }
+        .whatsapp-button {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #25d366;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            z-index: 9999;
+        }
         @keyframes blink-caret {
             from, to { border-color: transparent; }
             50% { border-color: orange; }
@@ -79,6 +91,7 @@
         <div class="text typing" id="text3" style="display: none">Trying to reach, we are just a WhatsApp click away. Or email daniel@sendme.ng.</div>
         <div class="text left-aligned salutation typing" id="text4" style="display: none">Your servant,</div>
     </section>
+    <a href="https://wa.me/2348036668485" class="whatsapp-button">WhatsApp Us</a>
     <script>
         document.addEventListener("DOMContentLoaded", function() {
             const texts = [
