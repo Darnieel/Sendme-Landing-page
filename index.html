@@ -34,10 +34,10 @@
             width: 100%;
         }
         .text {
-            font-size: 2.5em;
+            font-size: 3em; /* Increased font size */
             color: #9c3b3b;
             opacity: 1;
-            text-align: left;
+            text-align: justify; /* Justify alignment */
             margin-bottom: 10px;
             overflow: hidden;
             height: auto;
@@ -76,7 +76,7 @@
         }
         @media (max-width: 600px) {
             .text {
-                font-size: 2em;
+                font-size: 2.5em; /* Adjusted for smaller screens */
             }
         }
     </style>
@@ -89,8 +89,7 @@
     <section class="text-container">
         <div class="text left-aligned dear-visitor typing" id="text1" style="display: none">Dear Visitor,</div>
         <div class="text typing" id="text2" style="display: none">We have been committed to delivering quality meat to your doorstep. Now, we're going a step further. We're improving the process to get you quality meat and more, so you can always enjoy even better quality at a cheaper price, anywhere you choose to dine.</div>
-        <div class="text typing" id="text3" style="display: none">Want to reach out? Click the WhatsApp icon or email us at admin@sendme.ng, and we'll respond promptly.</div>
-        <div class="text left-aligned salutation typing" id="text4" style="display: none">Your servant,</div>
+        <div class="text left-aligned salutation typing" id="text3" style="display: none">Your servant</div>
     </section>
     <a href="https://wa.me/2348036668485" class="whatsapp-button">
         <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp Icon" class="whatsapp-icon">
@@ -100,15 +99,14 @@
             const texts = [
                 { element: document.getElementById("text1"), text: "Dear Visitor," },
                 { element: document.getElementById("text2"), text: "We have been committed to delivering quality meat to your doorstep. Now, we're going a step further. We're improving the process to get you quality meat and more, so you can always enjoy even better quality at a cheaper price, anywhere you choose to dine." },
-                { element: document.getElementById("text3"), text: "Want to reach out? Click the WhatsApp icon or email us at admin@sendme.ng, and we'll respond promptly." },
-                { element: document.getElementById("text4"), text: "Your servant," }
+                { element: document.getElementById("text3"), text: "Your servant" }
             ];
 
             let delay = 0;
 
             texts.forEach(({ element, text }) => {
                 setTimeout(() => typeText(element, text), delay);
-                delay += text.length * 100 + 1000; // Adjust typing speed and delay between lines
+                delay += text.length * 150 + 1000; // Adjusted typing speed and delay between lines
             });
 
             function typeText(element, text) {
@@ -122,7 +120,7 @@
                         clearInterval(interval);
                         element.classList.remove("typing");
                     }
-                }, 100); // Typing speed (100ms per character)
+                }, 150); // Slower typing speed (150ms per character)
             }
         });
     </script>
