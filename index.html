@@ -63,11 +63,16 @@
             right: 20px;
             background-color: #25d366;
             color: white;
-            padding: 10px 20px;
-            border-radius: 5px;
+            padding: 10px;
+            border-radius: 50%;
             text-decoration: none;
             font-weight: bold;
             z-index: 9999;
+        }
+        .whatsapp-icon {
+            width: 40px;
+            height: auto;
+            display: block;
         }
         @keyframes blink-caret {
             from, to { border-color: transparent; }
@@ -91,7 +96,9 @@
         <div class="text typing" id="text3" style="display: none">Trying to reach, we are just a WhatsApp click away. Or email daniel@sendme.ng.</div>
         <div class="text left-aligned salutation typing" id="text4" style="display: none">Your servant,</div>
     </section>
-    <a href="https://wa.me/2348036668485" class="whatsapp-button">WhatsApp Us</a>
+    <a href="https://wa.me/2348036668485" class="whatsapp-button">
+        <img src="whatsapp-icon.png" alt="WhatsApp Icon" class="whatsapp-icon">
+    </a>
     <script>
         document.addEventListener("DOMContentLoaded", function() {
             const texts = [
