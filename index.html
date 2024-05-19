@@ -22,7 +22,6 @@
             display: flex;
             justify-content: flex-end;
             margin-bottom: 40px;
-            max-width: 800px
         }
         .logo {
             max-width: 200px;
@@ -31,18 +30,24 @@
             margin-top: 20px;
         }
         .text-container {
+            max-width: 800px;
+            width: 100%;
         }
         .text {
             font-size: 2.5em;
             color: #9c3b3b;
             opacity: 1;
-            text-align: justify;
+            text-align: left;
             white-space: nowrap;
             overflow: hidden;
-            animation: typing 5s steps(40) forwards;
+            border-right: .15em solid orange;
             margin-bottom: 10px;
             height: 1.2em; /* Ensure height is consistent */
-        }   
+        }
+        .text.typing::after {
+            content: '|';
+            animation: blink-caret 0.7s step-end infinite;
+        }
         .left-aligned {
             text-align: left;
             margin-top: 40px;
@@ -71,18 +76,18 @@
     </header>
     <section class="text-container">
         <div class="text left-aligned dear-visitor typing" id="text1" style="display: none">Dear Visitor,</div>
-        <div class="text" id="text2" style="display: none">Sendme, we are sent to bring you quality meat to your doorstep,</div>
-        <div class="text" id="text3" style="display: none">but we realised the process of getting the meat is not efficient.</div>
-        <div class="text" id="text4" style="display: none">We are now focused on improving that process</div>
-        <div class="text" id="text5" style="display: none">so that you can always get quality meat</div>
-        <div class="text" id="text6" style="display: none">and MORE anywhere.</div>
+        <div class="text typing" id="text2" style="display: none">We are sent to bring you quality meat to your doorstep,</div>
+        <div class="text typing" id="text3" style="display: none">but we realised the process of getting the meat is not efficient.</div>
+        <div class="text typing" id="text4" style="display: none">We are now focused on improving that process</div>
+        <div class="text typing" id="text5" style="display: none">so that you can always get quality meat</div>
+        <div class="text typing" id="text6" style="display: none">and MORE anywhere.</div>
         <div class="text left-aligned salutation typing" id="text7" style="display: none">Your servant</div>
     </section>
     <script>
         document.addEventListener("DOMContentLoaded", function() {
             const texts = [
                 { element: document.getElementById("text1"), text: "Dear Visitor," },
-                { element: document.getElementById("text2"), text: "Sendme, we are sent to bring you quality meat to your doorstep," },
+                { element: document.getElementById("text2"), text: "We are sent to bring you quality meat to your doorstep," },
                 { element: document.getElementById("text3"), text: "but we realised the process of getting the meat is not efficient." },
                 { element: document.getElementById("text4"), text: "We are now focused on improving that process" },
                 { element: document.getElementById("text5"), text: "so that you can always get quality meat" },
