@@ -6,24 +6,28 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #ffffff; /* White.. background to make the red stand out */
+            background-color: #ffffff;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
             height: 100vh;
             margin: 0;
+            padding: 20px;
+            box-sizing: border-box;
             text-align: center;
         }
         .logo {
+            max-width: 200px;
             margin-bottom: 20px;
         }
         .text-container {
             max-width: 600px;
+            width: 100%;
         }
         .text {
             font-size: 1.5em;
-            color: #e60000; /* Red color to match your logo */
+            color: #e60000;
             opacity: 0;
             animation: fadeIn 3s forwards;
         }
@@ -39,9 +43,17 @@
         .text:nth-child(5) {
             animation-delay: 12s;
         }
+        .text:nth-child(6) {
+            animation-delay: 15s;
+        }
         @keyframes fadeIn {
             to {
                 opacity: 1;
+            }
+        }
+        @media (max-width: 600px) {
+            .text {
+                font-size: 1.2em;
             }
         }
     </style>
@@ -50,11 +62,13 @@
 <body>
     <img src="./IMG_0039.png" alt="Sendme Logo" class="logo">
     <div class="text-container">
+        <div class="text">Dear Visitor,</div>
         <div class="text">Sendme, we are sent to bring you quality meat to your doorstep,</div>
         <div class="text">but we realised the process of getting the meat is not efficient.</div>
         <div class="text">We are now focused on improving that process</div>
         <div class="text">so that you can always get quality meat</div>
         <div class="text">and MORE anywhere.</div>
+        <div class="text">With your servant,</div>
     </div>
 </body>
 </html>
