@@ -40,7 +40,6 @@
             text-align: left;
             white-space: nowrap;
             overflow: hidden;
-            border-right: .15em solid orange;
             margin-bottom: 10px;
             height: 1.2em; /* Ensure height is consistent */
         }
@@ -99,7 +98,7 @@
 
             texts.forEach(({ element, text }) => {
                 setTimeout(() => typeText(element, text), delay);
-                delay += text.length * 100 + 500; // Adjust typing speed and delay between lines
+                delay += text.length * 100 + 1000; // Adjust typing speed and delay between lines
             });
 
             function typeText(element, text) {
