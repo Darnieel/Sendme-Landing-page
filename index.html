@@ -11,7 +11,7 @@
             flex-direction: column;
             justify-content: flex-start;
             align-items: center;
-            min-height: 100vh; /* Change height to min-height */
+            min-height: 100vh;
             margin: 0;
             padding: 20px;
             box-sizing: border-box;
@@ -24,7 +24,8 @@
             margin-bottom: 40px;
         }
         .logo {
-            max-width: 100%; /* Adjusted max-width */
+            max-width: 200px;
+            width: 100%;
             height: auto;
             margin-top: 20px;
         }
@@ -38,9 +39,8 @@
             opacity: 1;
             text-align: left;
             margin-bottom: 10px;
-            white-space: nowrap;
             overflow: hidden;
-            height: 1.2em;
+            height: auto;
         }
         .text.typing::after {
             content: '|';
@@ -93,7 +93,7 @@
         <div class="text left-aligned salutation typing" id="text4" style="display: none">Your servant,</div>
     </section>
     <a href="https://wa.me/2348036668485" class="whatsapp-button">
-        <img src="whatsapp-icon.png" alt="WhatsApp Icon" class="whatsapp-icon">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp Icon" class="whatsapp-icon">
     </a>
     <script>
         document.addEventListener("DOMContentLoaded", function() {
