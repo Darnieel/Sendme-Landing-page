@@ -31,15 +31,15 @@
             width: 100%;
         }
         .text {
-            font-size: 2.5em; /* Larger font size */
-            color: #9c3b3b; /* Dark red color */
+            font-size: 2.5em;
+            color: #9c3b3b;
             opacity: 0;
             text-align: justify;
             white-space: nowrap;
             overflow: hidden;
-            border-right: .15em solid orange; /* The typewriter cursor */
-            animation: typing 5s steps(40) forwards; /* Typing animation */
-            margin-bottom: 10px; /* Add a little space between lines */
+            border-right: .15em solid orange;
+            margin-bottom: 10px;
+            animation: typing 5s steps(40) forwards;
         }
         .left-aligned {
             text-align: left;
@@ -49,19 +49,24 @@
             margin-top: 40px;
         }
         .dear-visitor {
-            margin-bottom: 40px; /* Increased space between 'Dear Visitor,' and the body of the letter */
+            margin-bottom: 40px;
         }
         @keyframes typing {
-            from {
+            0% {
                 width: 0;
+                opacity: 0;
             }
-            to {
+            50% {
+                opacity: 0.5;
+            }
+            100% {
                 width: 100%;
+                opacity: 1;
             }
         }
         @media (max-width: 600px) {
             .text {
-                font-size: 2em; /* Adjust font size for smaller screens */
+                font-size: 2em;
             }
         }
     </style>
