@@ -32,10 +32,14 @@
         }
         .text {
             font-size: 2.5em; /* Larger font size */
-            color: #4b0000; /* Dark red color */
+            color: #9c3b3b; /* Dark red color */
             opacity: 0;
-            animation: fadeIn 1.5s forwards; /* Faster animation */
             text-align: justify;
+            white-space: nowrap;
+            overflow: hidden;
+            border-right: .15em solid orange; /* The typewriter cursor */
+            animation: typing 5s steps(40) forwards; /* Typing animation */
+            margin-bottom: 10px; /* Add a little space between lines */
         }
         .left-aligned {
             text-align: left;
@@ -47,30 +51,12 @@
         .dear-visitor {
             margin-bottom: 40px; /* Increased space between 'Dear Visitor,' and the body of the letter */
         }
-        .text:nth-child(3) {
-            animation-delay: 1.5s;
-        }
-        .text:nth-child(4) {
-            animation-delay: 3s;
-        }
-        .text:nth-child(5) {
-            animation-delay: 4.5s;
-        }
-        .text:nth-child(6) {
-            animation-delay: 6s;
-        }
-        .text:nth-child(7) {
-            animation-delay: 7.5s;
-        }
-        .text:nth-child(8) {
-            animation-delay: 9s;
-        }
-        .text:nth-child(9) {
-            animation-delay: 10.5s;
-        }
-        @keyframes fadeIn {
+        @keyframes typing {
+            from {
+                width: 0;
+            }
             to {
-                opacity: 1;
+                width: 100%;
             }
         }
         @media (max-width: 600px) {
