@@ -11,6 +11,7 @@
             flex-direction: column;
             justify-content: flex-start;
             align-items: center;
+            height: 100vh;
             margin: 0;
             padding: 20px;
             box-sizing: border-box;
@@ -21,6 +22,7 @@
             display: flex;
             justify-content: flex-end;
             margin-bottom: 40px;
+            max-width: 800px
         }
         .logo {
             max-width: 200px;
@@ -39,13 +41,13 @@
             text-align: justify;
             white-space: nowrap;
             overflow: hidden;
-            border-right: .15em solid orange;
+            animation: typing 5s steps(40) forwards;
             margin-bottom: 10px;
             height: 1.2em; /* Ensure height is consistent */
         }   
         .left-aligned {
             text-align: left;
-            margin-top: 20px;
+            margin-top: 40px;
         }
         .salutation {
             margin-top: 40px;
@@ -70,13 +72,13 @@
         <img src="IMG_0039.png" alt="Sendme Logo" class="logo">
     </header>
     <section class="text-container">
-        <div class="text left-aligned dear-visitor typing" id="text1">Dear Visitor,</div>
-        <div class="text" id="text2">Sendme, we are sent to bring you quality meat to your doorstep,</div>
-        <div class="text" id="text3">but we realised the process of getting the meat is not efficient.</div>
-        <div class="text" id="text4">We are now focused on improving that process</div>
-        <div class="text" id="text5">so that you can always get quality meat</div>
-        <div class="text" id="text6">and MORE anywhere.</div>
-        <div class="text left-aligned salutation typing" id="text7">Your servant</div>
+        <div class="text left-aligned dear-visitor typing" id="text1" style="display: none">Dear Visitor,</div>
+        <div class="text" id="text2" style="display: none">Sendme, we are sent to bring you quality meat to your doorstep,</div>
+        <div class="text" id="text3" style="display: none">but we realised the process of getting the meat is not efficient.</div>
+        <div class="text" id="text4" style="display: none">We are now focused on improving that process</div>
+        <div class="text" id="text5" style="display: none">so that you can always get quality meat</div>
+        <div class="text" id="text6" style="display: none">and MORE anywhere.</div>
+        <div class="text left-aligned salutation typing" id="text7" style="display: none">Your servant</div>
     </section>
     <script>
         document.addEventListener("DOMContentLoaded", function() {
@@ -98,6 +100,7 @@
             });
 
             function typeText(element, text) {
+                element.style.display = "block";
                 element.innerHTML = "";
                 let index = 0;
                 const interval = setInterval(() => {
