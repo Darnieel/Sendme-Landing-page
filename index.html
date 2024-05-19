@@ -35,13 +35,17 @@
         .text {
             font-size: 2.5em;
             color: #9c3b3b;
-            opacity: 0;
+            opacity: 1;
             text-align: justify;
             white-space: nowrap;
             overflow: hidden;
             border-right: .15em solid orange;
             margin-bottom: 10px;
-            animation: typing 5s steps(40) forwards;
+            height: 1.2em; /* Ensure height is consistent */
+        }
+        .text.typing {
+            border-right: .15em solid orange;
+            animation: blink-caret 0.7s step-end infinite;
         }
         .left-aligned {
             text-align: left;
@@ -53,18 +57,9 @@
         .dear-visitor {
             margin-bottom: 40px;
         }
-        @keyframes typing {
-            0% {
-                width: 0;
-                opacity: 0;
-            }
-            50% {
-                opacity: 0.5;
-            }
-            100% {
-                width: 100%;
-                opacity: 1;
-            }
+        @keyframes blink-caret {
+            from, to { border-color: transparent; }
+            50% { border-color: orange; }
         }
         @media (max-width: 600px) {
             .text {
@@ -79,13 +74,46 @@
         <img src="IMG_0039.png" alt="Sendme Logo" class="logo">
     </header>
     <section class="text-container">
-        <div class="text left-aligned dear-visitor">Dear Visitor,</div>
-        <div class="text">Sendme, we are sent to bring you quality meat to your doorstep,</div>
-        <div class="text">but we realised the process of getting the meat is not efficient.</div>
-        <div class="text">We are now focused on improving that process</div>
-        <div class="text">so that you can always get quality meat</div>
-        <div class="text">and MORE anywhere.</div>
-        <div class="text left-aligned salutation">Your servant</div>
+        <div class="text left-aligned dear-visitor typing" id="text1">Dear Visitor,</div>
+        <div class="text typing" id="text2">Sendme, we are sent to bring you quality meat to your doorstep,</div>
+        <div class="text typing" id="text3">but we realised the process of getting the meat is not efficient.</div>
+        <div class="text typing" id="text4">We are now focused on improving that process</div>
+        <div class="text typing" id="text5">so that you can always get quality meat</div>
+        <div class="text typing" id="text6">and MORE anywhere.</div>
+        <div class="text left-aligned salutation typing" id="text7">Your servant</div>
     </section>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const texts = [
+                { element: document.getElementById("text1"), text: "Dear Visitor," },
+                { element: document.getElementById("text2"), text: "Sendme, we are sent to bring you quality meat to your doorstep," },
+                { element: document.getElementById("text3"), text: "but we realised the process of getting the meat is not efficient." },
+                { element: document.getElementById("text4"), text: "We are now focused on improving that process" },
+                { element: document.getElementById("text5"), text: "so that you can always get quality meat" },
+                { element: document.getElementById("text6"), text: "and MORE anywhere." },
+                { element: document.getElementById("text7"), text: "Your servant" }
+            ];
+
+            let delay = 0;
+
+            texts.forEach(({ element, text }) => {
+                setTimeout(() => typeText(element, text), delay);
+                delay += text.length * 100 + 500; // Adjust typing speed and delay between lines
+            });
+
+            function typeText(element, text) {
+                element.innerHTML = "";
+                let index = 0;
+                const interval = setInterval(() => {
+                    element.innerHTML += text[index];
+                    index++;
+                    if (index === text.length) {
+                        clearInterval(interval);
+                        element.classList.remove("typing");
+                    }
+                }, 100); // Typing speed (100ms per character)
+            }
+        });
+    </script>
 </body>
 </html>
