@@ -39,30 +39,33 @@
         }
         .left-aligned {
             text-align: left;
-            margin-top: 20px; /* Add some margin to create space between Dear Visitor and the rest */
+            margin-top: 20px;
         }
         .salutation {
-            margin-top: 40px; /* Increased space between the body of the letter and the salutation */
+            margin-top: 40px;
         }
-        .text:nth-child(2) {
-            animation-delay: 1.5s;
+        .dear-visitor {
+            margin-bottom: 40px; /* Increased space between 'Dear Visitor,' and the body of the letter */
         }
         .text:nth-child(3) {
-            animation-delay: 3s;
+            animation-delay: 1.5s;
         }
         .text:nth-child(4) {
-            animation-delay: 4.5s;
+            animation-delay: 3s;
         }
         .text:nth-child(5) {
-            animation-delay: 6s;
+            animation-delay: 4.5s;
         }
         .text:nth-child(6) {
-            animation-delay: 7.5s;
+            animation-delay: 6s;
         }
         .text:nth-child(7) {
-            animation-delay: 9s;
+            animation-delay: 7.5s;
         }
         .text:nth-child(8) {
+            animation-delay: 9s;
+        }
+        .text:nth-child(9) {
             animation-delay: 10.5s;
         }
         @keyframes fadeIn {
@@ -83,7 +86,7 @@
         <img src="IMG_0039.png" alt="Sendme Logo" class="logo">
     </div>
     <div class="text-container">
-        <div class="text left-aligned">Dear Visitor,</div>
+        <div class="text left-aligned dear-visitor">Dear Visitor,</div>
         <div class="text">Sendme, we are sent to bring you quality meat to your doorstep,</div>
         <div class="text">but we realised the process of getting the meat is not efficient.</div>
         <div class="text">We are now focused on improving that process</div>
