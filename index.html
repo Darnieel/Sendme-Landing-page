@@ -16,9 +16,14 @@
             padding: 20px;
             box-sizing: border-box;
         }
+        .header {
+            width: 100%;
+            display: flex;
+            justify-content: flex-end;
+            margin-bottom: 40px;
+        }
         .logo {
             max-width: 200px;
-            margin-bottom: 40px;
             margin-top: 20px;
         }
         .text-container {
@@ -26,7 +31,7 @@
             width: 100%;
         }
         .text {
-            font-size: 2em; /* Significantly larger font size */
+            font-size: 2.5em; /* Larger font size */
             color: #e60000; /* Red color to match your logo */
             opacity: 0;
             animation: fadeIn 3s forwards;
@@ -34,6 +39,7 @@
         }
         .left-aligned {
             text-align: left;
+            margin-top: 20px; /* Add some margin to create space between Dear Visitor and the rest */
         }
         .text:nth-child(2) {
             animation-delay: 3s;
@@ -53,6 +59,9 @@
         .text:nth-child(7) {
             animation-delay: 18s;
         }
+        .text:nth-child(8) {
+            animation-delay: 21s;
+        }
         @keyframes fadeIn {
             to {
                 opacity: 1;
@@ -60,16 +69,19 @@
         }
         @media (max-width: 600px) {
             .text {
-                font-size: 1.5em; /* Adjust font size for smaller screens */
+                font-size: 2em; /* Adjust font size for smaller screens */
             }
         }
     </style>
     <title>Sendme Landing Page</title>
 </head>
 <body>
-    <img src="IMG_0039.png" alt="Sendme Logo" class="logo">
+    <div class="header">
+        <img src="IMG_0039.png" alt="Sendme Logo" class="logo">
+    </div>
     <div class="text-container">
         <div class="text left-aligned">Dear Visitor,</div>
+        <div class="text left-aligned" style="margin-top: 20px;"></div>
         <div class="text">Sendme, we are sent to bring you quality meat to your doorstep,</div>
         <div class="text">but we realised the process of getting the meat is not efficient.</div>
         <div class="text">We are now focused on improving that process</div>
